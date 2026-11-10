@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CzechKidTube</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="/" id="home-link" class="logo" title="Home">CzechKid<span>Tube</span></a>
+    <form id="search-form" class="search-form">
+      <input id="search-input" type="text" placeholder="Search videos..." autocomplete="off" />
+      <select id="lang-select" title="Only show results in this language"></select>
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main>
+    <p id="status" class="status"></p>
+    <div id="results" class="grid"></div>
+  </main>
+
+  <div id="player-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="close-modal" class="close-btn">&times;</button>
+      <div class="video-wrapper">
+        <!-- Replaced by an <iframe> when the YouTube IFrame Player API creates the player. -->
+        <div id="player-frame"></div>
+      </div>
+      <h3 id="player-title"></h3>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="https://www.youtube.com/iframe_api" async></script>
+</body>
+</html>
